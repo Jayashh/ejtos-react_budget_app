@@ -41,7 +41,7 @@ const AllocationForm = (props) => {
                     <div className="input-group-prepend">
                 <label className="input-group-text" htmlFor="inputGroupSelect01">Department</label>
                   </div>
-                  <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
+                  <select className="custom-select"  id="inputGroupSelect01" onChange={(event) => setName(event.target.value)}>
                         <option defaultValue>Choose...</option>
                         <option value="Marketing" name="marketing"> Marketing</option>
                 <option value="Sales" name="sales">Sales</option>
@@ -58,6 +58,19 @@ const AllocationForm = (props) => {
                         <option defaultValue value="Add" name="Add">Add</option>
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
+
+
+                  <div className="input-group-prepend"style={{ marginLeft: '2rem' , backgroundColor: 'green'}}>
+                <label className="input-group-text" htmlFor="inputGroupSelect01">Currency</label>
+                  </div>
+                  <select className="awesome-class" id="inputGroupSelect03" onChange={(event) => setName(event.target.value)}>
+                <option value="Marketing" name="marketing"> $ Dollar</option>
+                <option value="Sales" name="sales">£ Pound </option>
+                <option value="Finance" name="finance"> Euro </option>´´´´œ
+                <option value="HR" name="hr">Rupee </option>
+
+                  </select>
+
 
                     <input
                         required='required'
