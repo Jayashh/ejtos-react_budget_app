@@ -7,6 +7,7 @@ const AllocationForm = (props) => {
     const [name, setName] = useState('');
     const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
+    const [currency, setCurrency] = useState('');
 
     const submitEvent = () => {
 
@@ -63,23 +64,56 @@ const AllocationForm = (props) => {
                   <div className="input-group-prepend"style={{ marginLeft: '2rem' , backgroundColor: 'green'}}>
                 <label className="input-group-text" htmlFor="inputGroupSelect01">Currency</label>
                   </div>
-                  <select className="awesome-class" id="inputGroupSelect03" onChange={(event) => setName(event.target.value)}>
-                <option value="Marketing" name="marketing"> $ Dollar</option>
-                <option value="Sales" name="sales">£ Pound </option>
-                <option value="Finance" name="finance"> Euro </option>´´´´œ
-                <option value="HR" name="hr">Rupee </option>
 
-                  </select>
+<select
+  className="custom-select"
+  id="inputGroupSelect03"
+  onChange={(event) => setCurrency(event.target.value)}
+  style={{
+    // Add your custom styles here
+    backgroundColor: 'green',
+    color: 'white',
+    border: '1px solid #ccc',
+    borderRadius: '4px',
+    padding: '5px 10px',
+    fontSize: '16px',
+    width: '200px', // Set the width as needed
+    cursor: 'pointer',    
+  }}
+>
+  <option defaultValue>Choose...</option>
+  <option value="$" name="dollar">
+  $ Dollar
+  </option>
+  <option value="£" name="pound">
+  £ Pound
+  </option>
+  <option value="€" name="euro">
+  € Euro
+  </option>
+  <option value="₹" name="rupee">
+  ₹ Ruppee
+  </option>
+</select>
 
 
-                    <input
-                        required='required'
-                        type='number'
-                        id='cost'
-                        value={cost}
-                        style={{ marginLeft: '2rem' , size: 10}}
-                        onChange={(event) => setCost(event.target.value)}>
-                        </input>
+
+<span style={{ marginLeft: '0.5rem' }}>
+{currency}
+       
+</span>
+<div></div>
+
+<input
+    required='required'
+    type='number'
+    id='cost'
+    value={cost}
+    style={{ marginLeft: '2rem', size: 10 }}
+    onChange={(event) => setCost(event.target.value)}
+/>
+
+
 
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>
                         Save

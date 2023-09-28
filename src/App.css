@@ -36,3 +36,8 @@
     transform: rotate(360deg);
   }
 }
+
+#inputGroupSelect03 option:hover {
+    background-color: white;
+    color: green;
+  }
